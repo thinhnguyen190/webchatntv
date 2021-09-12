@@ -1,0 +1,105 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box; }
+
+.bgwhite {
+  background-color: #fff; }
+
+.boder-gray {
+  border: 1px solid #ddd; }
+
+.container {
+  padding: 0%;
+  min-width: 100%;
+  min-height: 89.5vh;
+  margin: 0%; }
+
+.header {
+  height: 40px;
+  background-color: #581313; }
+
+.footer {
+  height: 40px;
+  background-color: #271a1a; }
+
+.container .job-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  min-height: 90vh; }
+
+.job-content .content__nav {
+  width: 15%;
+  background-color: #dd0c0c; }
+
+.job-content .content__jobs {
+  display: flex;
+  width: 85%;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.job-content .content__jobs .grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto; }
+
+.job-content .content__jobs .job {
+  padding: 20px;
+  min-height: 400px;
+  background-color: #998c8c;
+  background-clip: content-box; }
+
+.content__jobs .job .posi {
+  width: 100%;
+  height: 20%; }
+
+.content__jobs .job .des {
+  width: 100%;
+  height: 50%; }
+
+.content__jobs .job .req {
+  width: 100%;
+  height: 30%; }
+
+.admin-content {
+  width: 100%; }
+
+.admin-content .row.center {
+  width: 100%;
+  justify-content: center;
+  margin: 0%; }
+
+.admin-content .panel-heading {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  border-bottom: none; }
+
+.admin-content .panel-heading .panel-title {
+  margin: 0%; }
+
+.admin-content .admin-conten_edit1 {
+  max-width: 1100px; }
+
+.admin-content .admin-conten_edit2 {
+  max-width: 1100px; }
+
+.admin-content table thead th,
+.admin-content table tbody td {
+  text-align: center;
+  vertical-align: middle; }
+
+.admin-content table .icon-manager {
+  min-width: 108px; }
+
+.createJob-content {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.createJob-content form {
+  width: 1000px; }
+
+.createJob-content .mb-3 {
+  margin: 25px 0; }

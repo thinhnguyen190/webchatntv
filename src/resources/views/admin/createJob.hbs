@@ -1,0 +1,105 @@
+<div class="createJob-content">
+    <form method="POST" action="/admin/store">
+    <div class="mb-3">
+        <h2>Thêm tin tuyển dụng</h2>
+    </div>
+     <div class="mb-3">
+        <label for="position" class="form-label">Vị trí tuyển dụng</label>
+        <input type="text" class="form-control" id="position" name="position">
+    </div>
+    <div class="mb-3">
+        <label for="company" class="form-label">Tên công ty</label>
+        <input type="text" class="form-control" rows="5" " id="company" name="company"">
+    </div>
+    <div class="mb-3">
+        <label for="salary" class="form-label">Lương</label>
+        <input type="text" class="form-control" rows="3" id="salary" name="salary">
+    </div>
+    
+    <div class="mb-3">
+        <label for="deadline" class="form-label">Hạn nộp CV</label>
+        <input type="text" class="form-control" id="deadline" name="deadline">
+    </div>
+    <div class="mb-3">
+        <label for="address" class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control" rows="5" " id="address" name="address">
+    </div>
+    <div class="mb-3">
+        <label for="work" class="form-label">Công việc</label>
+        <select class="form-control" id="work" name="work">
+                        <option>Quản trị mạng</option>
+                        <option>Lập trình ứng dụng , web</option>
+                        <option>Quản trị cơ sở dữ liệu</option>
+                        <option>Bảo mật thông tin</option>
+                        <option>Hỗ trợ người dùng</option>
+        </select>
+    </div>
+    
+    <div class="mb-3">
+        <label for="step" class="form-label">Cấp bậc</label>
+        <select class="form-control" id="step" name="step">
+                        <option>Không yêu cầu</option>
+                        <option>Cao đẳng</option>
+                        <option>Đại học</option>
+                        <option>Cao học</option>
+                        <option>Thạc sĩ, Tiến sĩ</option>
+                        
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="workingtime" class="form-label">Hình thức làm việc</label>
+        <select class="form-control" id="workingtime" name="workingtime">
+                        <option>Full time</option>
+                        <option>Part time</option>
+                        <option>Thỏa thuận riêng</option>
+                        
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="need" class="form-label">Số lượng cần tuyển</label>
+        <input type="text" class="form-control" rows="3" " id="need" name="need">
+    </div>
+    <div class="mb-3">
+        <label for="degree" class="form-label">Yêu cầu bằng cấp</label>
+        <select class="form-control" id="degree" name="degree">
+                        <option>Không yêu cầu</option>
+                        <option>Cao đẳng</option>
+                        <option>Đại học</option>
+                        
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="experience" class="form-label">Yêu cầu kinh nghiệm</label>
+        <input type="text" class="form-control"  id="experience" name="experience">
+    </div>
+    <div class="mb-3">
+        <label for="sex" class="form-label">Yêu cầu giới tính</label>
+        <select class="form-control" id="sex" name="sex">
+                        <option>Không yêu cầu</option>
+                        <option>Nam</option>
+                        <option>Nữ</option>
+                        
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Mô tả chi tiết</label>
+        <textarea class="form-control" rows="5" " id="description" name="description"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="interest" class="form-label">Quyền lợi</label>
+        <textarea class="form-control" rows="3" " id="interest" name="interest"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="require" class="form-label">Yêu cầu</label>
+        <textarea class="form-control" rows="5" " id="require" name="require"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="contact_infor" class="form-label">Thông tin liên hệ</label>
+        <textarea class="form-control" rows="5" " id="contact_infor" name="contact_infor"></textarea>
+    </div>
+    
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Thêm tin tuyển dụng</button>
+    </div>
+    </form>
+</div>

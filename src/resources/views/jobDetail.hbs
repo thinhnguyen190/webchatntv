@@ -1,0 +1,187 @@
+<div class="jobTest-content">
+
+    <div class="job-search">
+        <div class="grid">
+            <div class="searchMain-job-form">
+
+                <div class="form-group  job-search__search">
+                    <input type="text" class="form-control" id="searchMain-job"
+                        placeholder="Tên công việc mong muốn ...." name="keySearch">
+                    <i class="fa fa-search job-search__search-icon"></i>
+                </div>
+
+                <div class="form-group posiWork">
+                    <select class="form-control" id="selectMain-work" name="work">
+                        <option value="">Tất cả công việc</option>
+                        <option>Quản trị mạng</option>
+                        <option>Lập trình ứng dụng , web</option>
+                        <option>Quản trị cơ sở dữ liệu</option>
+                        <option>Bảo mật thông tin</option>
+                        <option>Hỗ trợ người dùng</option>
+                    </select>
+                </div>
+
+                <div class="form-group posiRe">
+                    <select class="form-control" id="selectMain-address" name="address">
+                        <option value="">Tất cả các khu vực</option>
+                        <option>Hà nội</option>
+                        <option>Hồ Chí Minh</option>
+                        <option>Đà Nẵng</option>
+                        <option>Ninh Bình</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button id="btn-search-main" class="btn btn-primary job-search-btn">Tìm kiếm</button>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <div class="job-maincontent">
+        <div class="grid magtopbot30 bgWhite" id="changeSearch">
+            <div class="jobDetail">
+                <div class="jobDetail__infor">
+                    <h4>{{job.position}}</h4>
+                    <h5 class="magtopbot15">{{job.company}}</h5>
+                </div>
+                <div class="box">
+                    <div class="jobDetail__table">
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-dollar"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>MỨC LƯƠNG:</p>
+                                <P>{{job.salary}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-clock-o"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>HẠN NỘP HỒ SƠ:</p>
+                                <P>{{job.deadline}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>ĐỊA ĐIỂM:</p>
+                                <P>{{job.address}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-tasks"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>NGHÀNH NGHỀ:</p>
+                                <P>{{job.work}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-user"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>CẤP BẬC:</p>
+                                <P>{{job.step}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-suitcase"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>YÊU CẦU KINH NGHIỆM:</p>
+                                <P>{{job.experience}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-credit-card"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>HÌNH THỨC LÀM VIỆC:</p>
+                                <P>{{job.workingtime}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-cog"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>YÊU CẦU BẰNG CẤP:</p>
+                                <P>{{job.degree}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-users"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>SỐ LƯỢNG CẦN TUYỂN:</p>
+                                <P>{{job.need}}</P>
+                            </div>
+                        </div>
+                        <div class="jobDetail__table-item">
+                            <i class="fa fa-venus-mars"></i>
+                            <div class="jobDetail__table-item__ct">
+                                <p>YÊU CẦU GIỚI TÍNH:</p>
+                                <P>{{job.sex}}</P>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="jobDetail__contact-infor">
+                        <h3>Thông tin liên hệ</h3>
+                        <p>{{job.contact_infor}} </p>
+
+
+                    </div>
+
+                    <div class="jobDetail__part">
+                        <h3>Mô tả công việc</h3>
+                        <p>{{job.description}}</p>
+
+                    </div>
+
+                    <div class="jobDetail__part">
+                        <h3>Quyền lợi được hưởng</h3>
+                        <p>{{job.interest}}</p>
+
+                    </div>
+                    <div class="jobDetail__part">
+                        <h3>Yêu cầu công việc</h3>
+                        <p>{{job.require}}</p>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        $("#btn-search-main").click(function () {
+            var data = {}
+            data.keySearch = $('#searchMain-job').val()
+            data.work = $('#selectMain-work').val()
+            data.address = $('#selectMain-address').val()
+
+            $.post("/job/searchHandle_jobdetail", { data: data }, function (data, status) {
+                $('.job-maincontent').html(data)
+            });
+        });
+
+    });
+
+
+
+
+
+</script>

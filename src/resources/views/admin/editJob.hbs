@@ -1,0 +1,147 @@
+<div class="createJob-content">
+    <form method="POST" action="/admin/job/{{job._id}}?_method=PUT">
+        <div class="mb-3">
+            <h2>Sửa tin tuyển dụng</h2>
+        </div>
+        <div class="mb-3">
+            <label for="position" class="form-label">Vị trí tuyển dụng</label>
+            <input type="text" class="form-control" value="{{job.position}}" id="position" name="position">
+        </div>
+        <div class="mb-3">
+            <label for="company" class="form-label">Tên công ty</label>
+            <input type="text" class="form-control" rows="5" " id=" company" name="company" value="{{job.company}}">
+        </div>
+        <div class="mb-3">
+            <label for="salary" class="form-label">Lương</label>
+            <input type="text" class="form-control" rows="3" " id=" salary" name="salary" value="{{job.salary}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="deadline" class="form-label">Hạn nộp CV</label>
+            <input type="text" class="form-control" value="{{job.deadline}}" id="deadline" name="deadline">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Địa chỉ</label>
+            <input type="text" class="form-control" rows="5" " id=" address" name="address" value="{{job.address}}">
+        </div>
+        <div class="mb-3">
+            <label for="work" class="form-label" id="label-work">Công việc</label>
+            <select class="form-control" id="work" name="work" valueWork="{{job.work}}">
+
+                <option value="Quản trị mạng">Quản trị mạng</option>
+                <option value="Lập trình ứng dụng , web">Lập trình ứng dụng , web</option>
+                <option value="Quản trị cơ sở dữ liệu">Quản trị cơ sở dữ liệu</option>
+                <option value="Bảo mật thông tin">Bảo mật thông tin</option>
+                <option value="Hỗ trợ người dùng">Hỗ trợ người dùng</option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="step" class="form-label">Cấp bậc</label>
+            <select class="form-control" id="step" name="step" valueStep="{{job.step}}">
+                <option value="Không yêu cầu">Không yêu cầu</option>
+                <option value="Cao đẳng">Cao đẳng</option>
+                <option value="Đại học">Đại học</option>
+                <option value="Cao học">Cao học</option>
+                <option value="Thạc sĩ, Tiến sĩ">Thạc sĩ, Tiến sĩ</option>
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="workingtime" class="form-label">Hình thức làm việc</label>
+            <select class="form-control" id="workingtime" name="workingtime" valueWorkingtime="{{job.workingtime}}">
+                <option value="Full time">Full time</option>
+                <option value="Part time">Part time</option>
+                <option value="Thoả thuận riêng">Thỏa thuận riêng</option>
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="need" class="form-label">Số lượng cần tuyển</label>
+            <input type="text" class="form-control" rows="3" " id=" need" name="need" value="{{job.need}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="sex" class="form-label">Yêu cầu giới tính</label>
+            <select class="form-control" id="sex" name="sex" valueSex="{{job.sex}}">
+                <option value="Không yêu cầu">Không yêu cầu</option>
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Mô tả chi tiết</label>
+            <textarea class="form-control" rows="5" " id=" description"
+                name="description">{{job.description}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="interest" class="form-label">Quyền lợi</label>
+            <textarea class="form-control" rows="3" " id=" interest" name="interest">{{job.interest}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="require" class="form-label">Yêu cầu</label>
+            <textarea class="form-control" rows="5" " id=" require" name="require">{{job.require}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="contact_infor" class="form-label">Thông tin liên hệ</label>
+            <textarea class="form-control" rows="5" " id=" contact_infor"
+                name="contact_infor">{{job.contact_infor}}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="degree" class="form-label">Yêu cầu bằng cấp</label>
+            <select class="form-control" id="degree" name="degree" valueDegree="{{job.degree}}">
+                <option value="Không yêu cầu">Không yêu cầu</option>
+                <option value="Cao đẳng">Cao đẳng</option>
+                <option value="Đại học">Đại học</option>
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="experience" class="form-label">Yêu cầu kinh nghiệm</label>
+            <input type="text" class="form-control" value="{{job.experience}}" id="experience" name="experience">
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Sửa tin tuyển dụng</button>
+        </div>
+    </form>
+</div>
+<script>
+    const valueWork = document.querySelector('#work').getAttribute('valueWork')
+    const optionWork = document.querySelectorAll('#work option')
+    for(var i = 0 ; i < optionWork.length ; i++){
+        if(optionWork[i].value == valueWork){
+            optionWork[i].setAttribute("selected","selected")
+        }
+    }
+    const valueStep = document.querySelector('#step').getAttribute('valueStep')
+    const optionStep = document.querySelectorAll('#step option')
+    for(var i = 0 ; i < optionStep.length ; i++){
+        if(optionStep[i].value == valueStep){
+            optionStep[i].setAttribute("selected","selected")
+        }
+    }
+    const valueWorkingtime = document.querySelector('#workingtime').getAttribute('valueWorkingtime')
+    const optionWorkingtime = document.querySelectorAll('#workingtime option')
+    for(var i = 0 ; i < optionWorkingtime.length ; i++){
+        if(optionWorkingtime[i].value == valueWorkingtime){
+            optionWorkingtime[i].setAttribute("selected","selected")
+        }
+    }
+    const valueSex = document.querySelector('#sex').getAttribute('valueSex')
+    const optionSex = document.querySelectorAll('#sex option')
+    for(var i = 0 ; i < optionSex.length ; i++){
+        if(optionSex[i].value == valueSex){
+            optionSex[i].setAttribute("selected","selected")
+        }
+    }
+    const valueDegree = document.querySelector('#degree').getAttribute('valueDegree')
+    const optionDegree = document.querySelectorAll('#degree option')
+    for(var i = 0 ; i < optionDegree.length ; i++){
+        if(optionDegree[i].value == valueDegree){
+            optionDegree[i].setAttribute("selected","selected")
+        }
+    }
+</script>

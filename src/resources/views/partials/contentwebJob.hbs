@@ -1,0 +1,161 @@
+<div class="job-maincontent">
+    <div class="grid magtop50">
+        <div class="job-maincontent__nav">
+            <div class="form-group pad10 bgWhite">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Mức lương</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Tất cả các mức lương</option>
+                        <option>500-1000$</option>
+                        <option>1000$-1500$</option>
+                        <option>1500-2000$</option>
+                        <option>2000-2500$</option>
+                        <option>>2500$</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group pad10 bgWhite">
+                <label for="">Công việc</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Quản trị mạng
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Lập trình ứng dụng, web
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Quản trị cơ sở dữ liệu
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Bảo mật thông tin
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Hỗ trợ người dùng
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group pad10 bgWhite">
+                <label for="">Khu vực</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Hà Nội
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Hồ Chí Minh
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Đà Nẵng
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Ninh Bình
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Khác
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="job-maincontent_jobs" id="list-jobs-main">
+            <div class="message-search">
+                <p>Tìm thấy {{job.length}} tin tuyển dụng phù hợp</p>
+            </div>
+            {{#each job}}
+            <div class="job" salary="{{this.salary}}" creAt="{{this.createdAt}}">
+                <div class="job_infor">
+                    <p class="job_infor-title">
+
+                        <span class="boxNew">
+                            New
+                        </span>
+                        <span class="boxHot">
+                            Hot
+                        </span>
+                        <a href="/job/{{this._id}}"><b>{{this.position}}</b></a>
+                    </p>
+                    <p>{{this.company}}</p>
+                </div>
+                <div class="job_infor-detail">
+                    <div class="job_infor-detail_item">
+                        <p><i class="fa fa-dollar"></i>Lương: {{this.salary}}</p>
+                    </div>
+                    <div class="job_infor-detail_item">
+                        <p><i class="fa fa-map-marker"></i>Địa điểm: {{this.address}}</p>
+                    </div>
+                    <div class="job_infor-detail_item">
+                        <p><i class="fa fa-clock-o"></i>Hạn nộp: {{this.deadline}}</p>
+                    </div>
+                    <div class="job_infor-detail_item">
+                        <p><i class="fa fa-bar-chart"></i>Kinh nghiệm: {{this.experience}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+            {{/each}}
+
+
+
+
+        </div>
+
+    </div>
+</div>
+<script>
+    var joB = document.querySelectorAll('.job')
+    console.log(joB)
+    var joBtitle = document.querySelectorAll('.job .boxHot')
+    //var salarY = parseInt(joB[0].getAttribute('salary'))
+    //console.log(salarY)
+
+
+    for (let i = 0; i < joB.length; i++) {
+        var salarY = parseInt(joB[i].getAttribute('salary'))
+        // console.log(salarY)
+        if (salarY >= 2000) {
+            joBtitle[i].style.display = 'inline-block'
+        }
+    }
+
+
+    const joB_title2 = document.querySelectorAll('.job_infor-title .boxNew')
+    const timEToday = new Date()
+    for (let i = 0; i < joB.length; i++) {
+        const getTime = joB[i].getAttribute('creAt')
+        console.log(getTime)
+        const timeJob = new Date(getTime)
+        const diff = timEToday - timeJob       
+        if (diff <= 172800000) {
+            joB_title2[i].style.display = "inline-block"
+        }
+    }
+</script>

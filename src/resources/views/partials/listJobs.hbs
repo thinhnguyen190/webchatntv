@@ -1,0 +1,63 @@
+<div class="message-search">
+    <p>Tìm thấy {{job.length}} tin tuyển dụng phù hợp</p>
+</div>
+{{#each job}}
+<div class="job" salary="{{this.salary}}" creAt="{{this.createdAt}}">
+    <div class="job_infor">
+        <p class="job_infor-title">
+
+            <span class="boxNew">
+                New
+            </span>
+            <span class="boxHot">
+                Hot
+            </span>
+            <a href="/job/{{this._id}}"><b>{{this.position}}</b></a>
+        </p>
+        <p>{{this.company}}</p>
+    </div>
+    <div class="job_infor-detail">
+        <div class="job_infor-detail_item">
+            <p><i class="fa fa-dollar"></i>Lương: {{this.salary}}</p>
+        </div>
+        <div class="job_infor-detail_item">
+            <p><i class="fa fa-map-marker"></i>Địa điểm: {{this.address}}</p>
+        </div>
+        <div class="job_infor-detail_item">
+            <p><i class="fa fa-clock-o"></i>Hạn nộp: {{this.deadline}}</p>
+        </div>
+        <div class="job_infor-detail_item">
+            <p><i class="fa fa-bar-chart"></i>Kinh nghiệm: {{this.experience}}</p>
+        </div>
+    </div>
+
+</div>
+
+{{/each}}
+<script>
+    var joB = document.querySelectorAll('.job')
+    var joBtitle = document.querySelectorAll('.job .boxHot')
+    //var salarY = parseInt(joB[0].getAttribute('salary'))
+        //console.log(salarY)
+
+
+    for (let i = 0; i < joB.length; i++) {
+        var salarY = parseInt(joB[i].getAttribute('salary'))
+       // console.log(salarY)
+        if (salarY >= 2000) {
+            joBtitle[i].style.display='inline-block'
+        }
+    }
+
+    const joB_title2 = document.querySelectorAll('.job_infor-title .boxNew')
+    const timEToday = new Date()
+    for (let i = 0; i < joB.length; i++) {
+        const getTime = joB[i].getAttribute('creAt')
+        console.log(getTime)
+        const timeJob = new Date(getTime)
+        const diff = timEToday - timeJob       
+        if (diff <= 172800000) {
+            joB_title2[i].style.display = "inline-block"
+        }
+    }
+</script>

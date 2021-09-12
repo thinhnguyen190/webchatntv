@@ -1,0 +1,68 @@
+.job-maincontent .jobDetail{
+    padding: 15px;
+    width: 100%;
+}
+.job-maincontent .jobDetail p{
+    margin: 0px;
+}
+.magtop30{
+    margin-top: 30px;
+}
+
+.magtopbot30{
+    margin: 30px 0px;
+}
+
+.magtopbot15{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.jobDetail .box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.jobDetail .jobDetail__table{
+    padding: 0px 15px 15px 15px;
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    background-color: #f7fbff;
+    justify-content: space-between;
+    max-height: 410px;
+}
+.jobDetail .jobDetail__table i{
+    line-height: 45px;
+    font-size: 22px;
+    width: 22px;
+}
+.jobDetail__table .jobDetail__table-item{
+    display: flex;
+    width: 48%;
+    padding:15px 0px;
+    border-bottom: 1px solid #ccc;
+}
+.jobDetail__table-item .jobDetail__table-item__ct{
+    padding-left: 15px;
+}
+
+
+.jobDetail .jobDetail__contact-infor{
+    width: 38%;
+    background-color: #f7fbff ;
+    padding: 0px 10px;
+}
+.jobDetail .jobDetail__contact-infor h3,
+.jobDetail .jobDetail__part h3{
+    text-align: center;
+    font-size: 20px;
+    color: rgb(70, 50, 50);
+}
+.jobDetail .jobDetail__part{
+    width: 32%;
+    background-color: #f7fbff;
+    margin-top: 18px;
+    padding: 10px 10px;
+    min-height: 330px;
+}
